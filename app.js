@@ -16,7 +16,7 @@ function NarrowItDownController(MenuSearchService) {
         var term = narrow.searchInput;
 
         // Ensure that the search term isn't empty
-        if (term.length != 0) {
+        if (term && term.length != 0) {
             var promise = MenuSearchService.getMatchedMenuItems(term);
             promise.then(function(result) {
                 narrow.searchResults = result.data && result.data.menu_items
@@ -25,8 +25,8 @@ function NarrowItDownController(MenuSearchService) {
                     });
 
                 // Hide the empty result div
-                narrow.showEmpty = narrow.searchResults 
-                    && narrow.searchResults.length == 0 || false;
+                narrow.showEmpty = (narrow.searchResults 
+                    && narrow.searchResults.length == 0) || false;
             });
         } else {
             narrow.searchResults = [];
