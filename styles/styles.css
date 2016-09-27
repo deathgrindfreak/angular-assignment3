@@ -50,3 +50,18 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+#results {
+    clear: both;
+}
+.short-name, .price-small, .price-large {
+    width: 100px;
+}
+.results-row {
+    height: 60px;
+}
+.remove-button {
+    width: 200px;
+}
+th, td {
+    padding: 5px;
+}

@@ -1,0 +1,22 @@
+<table ng-hide="results.length == 0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Price (Small)</th>
+            <th>Price (Large)</th>
+            <th>Description</th>
+            <th>Remove Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="results-row" ng-repeat="result in results">
+            <td>{{ result.name }}</td>
+            <td class="short-name"><strong>{{ result.short_name }}</strong></td>
+            <td class="price-small"><span ng-if="result.price_small">$</span>{{ result.price_small || "N/A" }}</td>
+            <td class="price-large">${{ result.price_large }}</td>
+            <td>{{ result.description }}</td>
+            <td class="remove-button"><button ng-click="onRemove($index)">Don't want this one!</button></td>
+        </tr>
+    </tbody>
+</table>
