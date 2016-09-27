@@ -25,7 +25,8 @@ function NarrowItDownController(MenuSearchService) {
                     });
 
                 // Hide the empty result div
-                narrow.showEmpty = narrow.searchResults.length == 0;
+                narrow.showEmpty = narrow.searchResults 
+                    && narrow.searchResults.length == 0 || false;
             });
         } else {
             narrow.searchResults = [];
